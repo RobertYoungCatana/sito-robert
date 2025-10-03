@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-    <h1>Benvenuto nel mio sito</h1>
+    <h1>Bene eh? Manco male</h1>
     <nav>
         <a href="#appunti">Appunti</a>
         <a href="#playlist">Playlist</a>
@@ -16,6 +16,7 @@
     </nav>
 </header>
 
+>!--APPUNTI-->
 <section id="appunti">
     <h2>I miei appunti scolastici</h2>
     <ul>
@@ -27,6 +28,7 @@
     </ul>
 </section>
 
+<!--PLAYLIST SPOTIFY-->
 <section id="playlist">
     <h2>🎵 Le mie playlist Spotify</h2>
 
@@ -73,26 +75,33 @@
     <div class="playlist-card">
         <div class="glow"></div>
         <div class="play-icon">▶</div>
-        <h3>☀Manele vechi si noi</h3>
+        <h3>Manele vechi si noi</h3>
         <p>Muzica pentru cine cauta niste distractie.</p>
         <iframe src="https://open.spotify.com/embed/playlist/7JjAewTiLR1VgRjt7ggkOF?utm_source=generator" width="100%" height="180" frameborder="0" allowfullscreen></iframe>
     </div>
 </section>
 
-
+<!-- AGGIUNTA PDF -->
 <section id="upload">
     <h2>Carica nuovi appunti (PDF)</h2>
     <input type="file" id="pdfInput" accept="application/pdf" multiple>
     <ul id="pdfList"></ul>
 </section>
 
+
+<!-- CHATGPT -->
 <section id="chatgpt">
     <h2>Chat con ChatGPT</h2>
-    <div class="chat-box">
-        <div id="chat-log"></div>
-        <input type="text" id="userInput" placeholder="Scrivi un messaggio..." />
-        <button onclick="sendMessage()">Invia</button>
+    <div class="chat-container">
+        <div class="chat-header">Chat AI</div>
+        <div id="chatBox" class="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Scrivi un messaggio..." />
+            <button id="sendBtn">Invia</button>
+        </div>
     </div>
+
+</section>
 
 
     <footer>
@@ -101,4 +110,11 @@
 
 <script src="script.js"></script>
 </body>
+
+
+<main class="menu-section">
+    <div class="menu-card" onclick="location.href='#upload'">📄 Appunti PDF</div>
+    <div class="menu-card" onclick="location.href='#playlist'">🎵 Playlist</div>
+    <div class="menu-card" onclick="location.href='#chatgpt'">🤖 Chat AI</div>
+</main>
 </html>
