@@ -1,0 +1,206 @@
+/* === Base === */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #002366; /* Blu reale */
+    color: #fff;
+}
+
+/* === Sezioni generali === */
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    color: #002366;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+}
+
+/* === Header === */
+header {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin: 0;
+    animation: fadeIn 1s ease;
+}
+
+/* === Menu Cards === */
+.menu-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.menu-card {
+    background: white;
+    color: #002366;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    min-width: 180px;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+/* === PDF Upload === */
+#upload input[type="file"] {
+    margin-bottom: 20px;
+}
+
+#pdfList li {
+    margin: 10px 0;
+}
+
+/* === Playlist === */
+#playlist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.playlist-card {
+    background: linear-gradient(135deg, #2c2c3c, #1e1e2f);
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 0 0 0 transparent;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.playlist-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 255, 213, 0.3);
+}
+
+.playlist-card h3 {
+    margin-top: 0;
+    color: #00ffd5;
+}
+
+.playlist-card p {
+    font-size: 0.95em;
+    color: #ccc;
+    margin-bottom: 1em;
+}
+
+.playlist-card iframe {
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
+}
+
+/* === Chat AI === */
+.chat-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #002366;
+}
+
+.chat-header {
+    background: #001f4d;
+    color: #ffffff;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f4f6fa;
+}
+
+.chat-box div {
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #e0e7ff;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+    background: #ffffff;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    font-size: 1em;
+    outline: none;
+}
+
+.chat-input button {
+    background: #002366;
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+    background: #001a4d;
+}
+
+/* === Animazioni === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsive === */
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .menu-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .chat-container {
+        width: 90%;
+    }
+
+    .playlist-card iframe {
+        height: 180px;
+    }
+}
