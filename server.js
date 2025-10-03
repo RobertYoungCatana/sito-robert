@@ -1,31 +1,15 @@
-const express = require("express");
-const cors = require("cors");
-const OpenAI = require("openai");
-require("dotenv").config();
-
+const express = require('express');
 const app = express();
-app.use(cors());
-app.use(express.json());
-app.use(express.static("public"));
+const PORT = process.env.PORT || 3000;
 
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
+// Serve i file statici dalla cartella "public"
+app.use(express.static('public'));
+
+// Route di fallback per la homepage
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
 });
 
-app.post("/chat", async (req, res) => {
-    const userMessage = req.body.message;
-
-    try {
-        const completion = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: userMessage }]
-        });
-
-        res.json({ reply: completion.choices[0].message.content });
-    } catch (error) {
-        console.error("Errore OpenAI:", error);
-        res.status(500).json({ error: error.message });
-    }
+app.listen(PORT, () => {
+    console.log(`Server attivo su http://localhost:${PORT}`);
 });
-
-app.listen(3000, () => console.log("✅ Server avviato su http://localhost:3000"));
