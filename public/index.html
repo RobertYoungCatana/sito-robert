@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appunti & Playlist di Robert</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Benvenuto nel mio sito</h1>
+    <nav>
+        <a href="#appunti">Appunti</a>
+        <a href="#playlist">Playlist</a>
+        <a href="#upload">Carica PDF</a>
+    </nav>
+</header>
+
+<section id="appunti">
+    <h2>I miei appunti scolastici</h2>
+    <ul>
+        <li><a href="appunti/informatica.html">Informatica</a></li>
+        <li><a href="appunti/matematica.html">Matematica</a></li>
+        <li><a href="appunti/sistemi-e-reti.html">Sistemi e Reti</a></li>
+        <li><a href="appunti/tps.html">TPS</a></li>
+        <li><a href="appunti/telecomunicazioni.html">Telecomunicazioni</a></li>
+    </ul>
+</section>
+
+<section id="playlist">
+    <h2>🎵 Le mie playlist Spotify</h2>
+
+    <div class="playlist-card">
+        <div class="glow"></div>
+        <div class="play-icon">▶</div>
+        <h3>Reggaeton</h3>
+        <p>Musica spagnola per delle vibes estive e non solo.</p>
+        <iframe src="https://open.spotify.com/embed/playlist/4obHtIC6XJIeybeumHYBDE?utm_source=generator" width="100%" height="180" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="playlist-card">
+        <div class="glow"></div>
+        <div class="play-icon">▶</div>
+        <h3>Estate Italiana</h3>
+        <p>Canzoni italiane per percorrere la vera estate italiana prime.</p>
+        <iframe src="https://open.spotify.com/embed/playlist/4AlwhvpTx7uy4SO0hBjNBz?utm_source=generator" width="100%" height="180" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="playlist-card">
+        <div class="glow"></div>
+        <div class="play-icon">▶</div>
+        <h3>R&B</h3>
+        <p>Vibes chill per chi adora il nuovo genere, old e non.</p>
+        <iframe src="https://open.spotify.com/embed/playlist/0cbVg2OS7Vur4piDLstIU4?utm_source=generator" width="100%" height="180" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="playlist-card">
+        <div class="glow"></div>
+        <div class="play-icon">▶</div>
+        <h3>Chill Tradi</h3>
+        <p>Chill vibes, adatte per tutto.</p>
+        <iframe src="https://open.spotify.com/embed/playlist/4CTiwuvrQ18qB30iqxmBii?utm_source=generator" width="100%" height="180" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="playlist-card">
+        <div class="glow"></div>
+        <div class="play-icon">▶</div>
+        <h3>Boxe</h3>
+        <p>Musica per caricarsi prima di ogni allenamento.</p>
+        <iframe src="https://open.spotify.com/embed/playlist/3BHP4p5ET08K5IfWuiuTGk?utm_source=generator" width="100%" height="180" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="playlist-card">
+        <div class="glow"></div>
+        <div class="play-icon">▶</div>
+        <h3>☀Manele vechi si noi</h3>
+        <p>Muzica pentru cine cauta niste distractie.</p>
+        <iframe src="https://open.spotify.com/embed/playlist/7JjAewTiLR1VgRjt7ggkOF?utm_source=generator" width="100%" height="180" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+
+<section id="upload">
+    <h2>Carica nuovi appunti (PDF)</h2>
+    <input type="file" id="pdfInput" accept="application/pdf" multiple>
+    <ul id="pdfList"></ul>
+</section>
+
+<section id="chatgpt">
+    <h2>Chat con ChatGPT</h2>
+    <div class="chat-box">
+        <div id="chat-log"></div>
+        <input type="text" id="userInput" placeholder="Scrivi un messaggio..." />
+        <button onclick="sendMessage()">Invia</button>
+    </div>
+
+
+    <footer>
+    <p>Made by robb</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
