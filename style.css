@@ -4,17 +4,29 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: #002366; /* Blu reale */
     color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+/* === Sezioni generali === */
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    color: #002366;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
 }
 
 /* === Header === */
-header h1 {
-    font-size: 2.5em;
-    margin: 40px 0 20px;
+header {
     text-align: center;
+    padding: 60px 20px 20px;
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin: 0;
     animation: fadeIn 1s ease;
 }
 
@@ -23,8 +35,8 @@ header h1 {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 40px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .menu-card {
@@ -46,33 +58,20 @@ header h1 {
     box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
-/* === Upload Section === */
-#upload {
-    background-color: #fff;
-    padding: 2em;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    color: #002366;
-    max-width: 600px;
-    margin: 40px auto;
-}
-
-#pdfInput {
-    margin-bottom: 1em;
+/* === PDF Upload === */
+#upload input[type="file"] {
+    margin-bottom: 20px;
 }
 
 #pdfList li {
-    margin: 0.5em 0;
+    margin: 10px 0;
 }
 
-/* === Playlist Section === */
+/* === Playlist === */
 #playlist {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    padding: 2em;
-    background-color: #fff;
-    color: #002366;
 }
 
 .playlist-card {
@@ -85,8 +84,6 @@ header h1 {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    animation: fadeInCard 0.8s ease-out forwards;
-    animation-delay: var(--delay, 0s);
 }
 
 .playlist-card:hover {
@@ -112,9 +109,98 @@ header h1 {
     height: 200px;
 }
 
-.play-icon {
-    font-size: 2rem;
-    color: #00ffd5;
-    animation: pulsePlay 1.5s infinite ease-in-out;
-    margin-bottom: 10px;
-    display: inline-block;
+/* === Chat AI === */
+.chat-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #002366;
+}
+
+.chat-header {
+    background: #001f4d;
+    color: #ffffff;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f4f6fa;
+}
+
+.chat-box div {
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #e0e7ff;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+    background: #ffffff;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    font-size: 1em;
+    outline: none;
+}
+
+.chat-input button {
+    background: #002366;
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+    background: #001a4d;
+}
+
+/* === Animazioni === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsive === */
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .menu-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .chat-container {
+        width: 90%;
+    }
+
+    .playlist-card iframe {
+        height: 180px;
+    }
+}
