@@ -204,3 +204,57 @@ header h1 {
         height: 180px;
     }
 }
+
+/* === Bottoni Materie === */
+.materia {
+    background: #002366;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.materia:hover {
+    background: #001a4d;
+    transform: translateY(-2px);
+}
+
+/* === Sezione PDF Viewer === */
+#pdf-viewer {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    color: #002366;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+#pdf-viewer h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #002366;
+}
+
+#pdf-list li {
+    margin: 10px 0;
+}
+
+#pdf-list a {
+    color: #002366;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+#pdf-list a:hover {
+    color: #0055aa;
+    text-decoration: underline;
+}
+

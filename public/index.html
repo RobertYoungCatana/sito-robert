@@ -8,12 +8,10 @@
 </head>
 <body>
 
-<!-- Header -->
 <header>
     <h1>Benvenuto nel sito bodyc0unt</h1>
 </header>
 
-<!-- Menu Cards -->
 <main class="menu-section">
     <div class="menu-card" onclick="location.href='#appunti'">📚 Appunti</div>
     <div class="menu-card" onclick="location.href='#playlist'">🎵 Playlist</div>
@@ -25,12 +23,17 @@
 <section id="appunti">
     <h2>I miei appunti scolastici</h2>
     <ul>
-        <li><a href="appunti/informatica.html">Informatica</a></li>
-        <li><a href="appunti/matematica.html">Matematica</a></li>
-        <li><a href="appunti/sistemi-e-reti.html">Sistemi e Reti</a></li>
-        <li><a href="appunti/tps.html">TPS</a></li>
-        <li><a href="appunti/telecomunicazioni.html">Telecomunicazioni</a></li>
+        <li><button class="materia" data-materia="Informatica">Informatica</button></li>
+        <li><button class="materia" data-materia="Matematica">Matematica</button></li>
+        <li><button class="materia" data-materia="SistemiEReti">Sistemi e Reti</button></li>
+        <li><button class="materia" data-materia="TPS">TPS</button></li>
+        <li><button class="materia" data-materia="Telecomunicazioni">Telecomunicazioni</button></li>
     </ul>
+
+    <div id="pdf-viewer" style="display:none;">
+        <h3 id="titolo-materia"></h3>
+        <ul id="pdf-list"></ul>
+    </div>
 </section>
 
 <!-- Playlist -->
@@ -45,45 +48,7 @@
         <iframe src="https://open.spotify.com/embed/playlist/4obHtIC6XJIeybeumHYBDE" allowfullscreen></iframe>
     </div>
 
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>Estate Italiana</h3>
-        <p>Canzoni italiane per percorrere la vera estate italiana prime.</p>
-        <iframe src="https://open.spotify.com/embed/playlist/4AlwhvpTx7uy4SO0hBjNBz" allowfullscreen></iframe>
-    </div>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>R&B</h3>
-        <p>Vibes chill per chi adora il nuovo genere, old e non.</p>
-        <iframe src="https://open.spotify.com/embed/playlist/0cbVg2OS7Vur4piDLstIU4" allowfullscreen></iframe>
-    </div>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>Chill Tradi</h3>
-        <p>Chill vibes, adatte per tutto.</p>
-        <iframe src="https://open.spotify.com/embed/playlist/4CTiwuvrQ18qB30iqxmBii" allowfullscreen></iframe>
-    </div>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>Boxe</h3>
-        <p>Musica per caricarsi prima di ogni allenamento.</p>
-        <iframe src="https://open.spotify.com/embed/playlist/3BHP4p5ET08K5IfWuiuTGk" allowfullscreen></iframe>
-    </div>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>Manele vechi si noi</h3>
-        <p>Muzica pentru cine cauta niste distractie.</p>
-        <iframe src="https://open.spotify.com/embed/playlist/7JjAewTiLR1VgRjt7ggkOF" allowfullscreen></iframe>
-    </div>
+    <!-- Altre playlist... -->
 </section>
 
 <!-- Upload PDF -->
@@ -106,7 +71,6 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer>
     <p>Made by robb</p>
 </footer>
