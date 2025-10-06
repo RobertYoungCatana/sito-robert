@@ -15,9 +15,10 @@
 <main class="menu-section">
     <div class="menu-card" onclick="location.href='#appunti'">📚 Appunti</div>
     <div class="menu-card" onclick="location.href='#playlist'">🎵 Playlist</div>
-    <div class="menu-card" onclick="location.href='#upload'">📄 Carica PDF</div>
-    <div class="menu-card" onclick="location.href='#chatgpt'">🤖 Chat AI</div>
+    <div class="menu-card" onclick="location.href='#scommesse'">🎲 Zona Scommesse</div>
+    <div class="menu-card" onclick="location.href='chat.html'">💬 Chat tra Utenti</div>
 </main>
+
 
 <!-- Appunti -->
 <section id="appunti">
@@ -81,28 +82,18 @@
         <h3>Muzica Romaneasca</h3>
         <iframe src="https://open.spotify.com/playlist/7JjAewTiLR1VgRjt7ggkOF?si=47b359bec4cc448b" allowfullscreen></iframe>
     </div>
-    <!-- Altre playlist... -->
 </section>
 
-<!-- Upload PDF -->
-<section id="upload">
-    <h2>📄 Carica nuovi appunti (PDF)</h2>
-    <input type="file" id="pdfInput" accept="application/pdf" multiple />
-    <ul id="pdfList"></ul>
+<section id="player">
+    <h2>Ascolta direttamente qui</h2>
+    <iframe style="border-radius:12px"
+            src="https://open.spotify.com/"
+            width="100%" height="152" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+    </iframe>
 </section>
 
-<!-- ChatGPT -->
-<section id="chatgpt">
-    <h2>🤖 Chat con ChatGPT</h2>
-    <div class="chat-container">
-        <div class="chat-header">Chat AI</div>
-        <div id="chatBox" class="chat-box"></div>
-        <div class="chat-input">
-            <input type="text" id="userInput" placeholder="Scrivi un messaggio..." />
-            <button id="sendBtn">Invia</button>
-        </div>
-    </div>
-</section>
 
 <!-- Zona Scommesse-->
 <section id="scommesse">
@@ -123,6 +114,74 @@
     </div>
 </section>
 
+<!--Chat tra utenti-->
+<section id="chat-link">
+    <h2>💬 Chat tra utenti</h2>
+    <a href="/chat.html" class="chat-button">Entra nella chat tra utenti</a>
+</section>
+
+<!--DashBoard-->
+<section id="dashboard">
+    <h2>📊 Dashboard</h2>
+    <div class="stats">
+        <div class="stat-box">
+            <h3>📄 PDF disponibili</h3>
+            <p id="pdf-count">0</p>
+        </div>
+        <div class="stat-box">
+            <h3>💬 Utenti in chat</h3>
+            <p id="chat-users">0</p>
+        </div>
+        <div class="stat-box">
+            <h3>🎵 Playlist cliccate</h3>
+            <p id="playlist-clicks">0</p>
+        </div>
+    </div>
+</section>
+
+<!--Barra del tempo-->
+<div id="unlock-timer">
+    <p>⏳ Sblocco Sala Giochi tra <span id="time-left">5:00</span></p>
+    <div id="progress-bar">
+        <div id="progress-fill"></div>
+    </div>
+</div>
+
+
+
+<!--Sezione Segreta-->
+<section id="segreto" style="display:none;">
+    <h2>🕹️ Sala Giochi Segreta</h2>
+    <p>Hai sbloccato l’area riservata! Ecco i giochi disponibili:</p>
+
+    <!-- Trivia Game -->
+    <div class="game-card">
+        <h3>🧠 Trivia Game</h3>
+        <div id="trivia-game">
+            <div id="quiz-container"></div>
+            <button onclick="submitQuiz()">Invia Risposte</button>
+            <div id="quiz-result"></div>
+        </div>
+    </div>
+
+    <!-- Memory Game -->
+    <div class="game-card">
+        <h3>🎯 Memory Game</h3>
+        <iframe src="https://games.construct.net/memory" width="100%" height="400" frameborder="0"></iframe>
+    </div>
+
+    <!-- Space Shooter -->
+    <div class="game-card">
+        <h3>🚀 Space Shooter</h3>
+        <iframe src="https://games.construct.net/spaceshooter" width="100%" height="400" frameborder="0"></iframe>
+    </div>
+
+    <!-- Reaction Game -->
+    <div class="game-card">
+        <h3>⚡ Reaction Speed Test</h3>
+        <iframe src="https://games.construct.net/reaction" width="100%" height="400" frameborder="0"></iframe>
+    </div>
+</section>
 
 
 <footer>

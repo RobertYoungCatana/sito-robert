@@ -294,4 +294,110 @@ header h1 {
     box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
 }
 
+.menu-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px auto;
+}
 
+.menu-card {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu-card:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 200px;
+}
+
+.stat-box h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.stat-box p {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+#segreto {
+    background-color: #111;
+    color: #00ffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.3);
+    margin-top: 40px;
+}
+
+.game-card {
+    background-color: #222;
+    border: 2px solid #00ffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+#unlock-timer {
+    margin: 30px auto;
+    text-align: center;
+    color: #00ffff;
+    font-weight: bold;
+}
+
+#progress-bar {
+    width: 80%;
+    height: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px auto;
+    box-shadow: 0 0 10px rgba(0,255,255,0.3);
+    position: relative;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00ffff, #007bff);
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #007bff;
+    animation: pulseGlow 2s infinite;
+    transition: width 1s linear;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #007bff;
+    }
+    50% {
+        box-shadow: 0 0 20px #00ffff, 0 0 40px #007bff;
+    }
+    100% {
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #007bff;
+    }
+}

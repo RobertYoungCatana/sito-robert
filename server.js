@@ -4,11 +4,16 @@ const dotenv = require("dotenv");
 const OpenAI = require("openai");
 const fs = require("fs");
 const path = require("path");
+const http = require("http");
+const socketIo = require("socket.io");
 
 dotenv.config();
 console.log("🔑 Chiave API:", process.env.OPENAI_API_KEY ? "Trovata ✅" : "Mancante ❌");
 
 const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public")); // Serve index.html, style.css, script.js
@@ -58,8 +63,22 @@ app.post("/chat", async (req, res) => {
     }
 });
 
+// ✅ Socket.io per chat tra utenti
+io.on("connection", (socket) => {
+    console.log("🟢 Nuovo utente connesso");
+
+    socket.on("setUsername", (username) => {
+        socket.username = username;
+        socket.broadcast.emit("userJoined", username); // ✅ Notifica agli altri
+    });
+
+    socket.on("chatMessage", (msg) => {
+        io.emit("chatMessage", { user: socket.username, text: msg });
+    });
+});
+
 // ✅ Avvia il server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`✅ Server attivo su http://localhost:${PORT}`);
 });

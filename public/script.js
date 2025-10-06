@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // 📚 Appunti
     const viewer = document.getElementById("pdf-viewer");
     const titolo = document.getElementById("titolo-materia");
     const list = document.getElementById("pdf-list");
@@ -35,4 +36,54 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // 📊 Dashboard
+    fetch("/api/pdf/SistemiEReti")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("pdf-count").textContent = data.length;
+        });
+
+    document.getElementById("chat-users").textContent = Math.floor(Math.random() * 5) + 1;
+
+    let clicks = 0;
+    document.querySelectorAll("#playlist iframe").forEach(frame => {
+        frame.addEventListener("click", () => {
+            clicks++;
+            document.getElementById("playlist-clicks").textContent = clicks;
+        });
+    });
+
+    // ⏱️ Timer + barra + sblocco
+    const totalSeconds = 5 * 60;
+    let secondsLeft = totalSeconds;
+
+    const timeDisplay = document.getElementById("time-left");
+    const progressFill = document.getElementById("progress-fill");
+
+    if (localStorage.getItem("segretoSbloccato")) {
+        document.getElementById("segreto").style.display = "block";
+        document.getElementById("unlock-timer").style.display = "none";
+        progressFill.style.width = "100%";
+        timeDisplay.textContent = "0:00";
+    } else {
+        const timer = setInterval(() => {
+            secondsLeft--;
+
+            const minutes = Math.floor(secondsLeft / 60);
+            const seconds = secondsLeft % 60;
+            timeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+            const progress = ((totalSeconds - secondsLeft) / totalSeconds) * 100;
+            progressFill.style.width = `${progress}%`;
+
+            if (secondsLeft <= 0) {
+                clearInterval(timer);
+                document.getElementById("segreto").style.display = "block";
+                document.getElementById("unlock-timer").style.display = "none";
+                localStorage.setItem("segretoSbloccato", "true");
+                alert("🎉 Hai sbloccato la Sala Giochi Segreta!");
+            }
+        }, 1000);
+    }
 });

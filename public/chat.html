@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+<div id="user-profile" style="display:none;">
+    <img id="user-avatar" src="img/avatar-anonymous.png" alt="Avatar" />
+    <div>
+        <h3 id="user-name">👤 Robb</h3>
+        <p>📈 Livello: <span id="user-level">1</span></p>
+        <p>✉️ Messaggi inviati: <span id="user-messages">0</span></p>
+    </div>
+</div>
+
+<div id="notifications"></div>
+
+<h2>💬 Chat tra utenti</h2>
+            <div id="login">
+                <input type="text" id="username" placeholder="Scegli il tuo nome" />
+                <button onclick="setUsername()">Entra</button>
+            </div>
+
+            <div id="chat" style="display:none;">
+                <div id="messages"></div>
+                    <input type="text" id="message" placeholder="Scrivi un messaggio..." />
+                    <button onclick="sendMessage()">Invia</button>
+            </div>
+
+            <script src="/socket.io/socket.io.js"></script>
+            <script src="chat.js"></script>
+</body>
+</html>
