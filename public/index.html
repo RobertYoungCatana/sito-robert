@@ -3,190 +3,232 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Appunti & Playlist di Robert</title>
+    <title>Benvenuto nel sito bodyCount</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
-    <h1>Benvenuto nel sito bodyc0unt</h1>
+    <h1>Benvenuto nel sito <strong>bodyCount</strong></h1>
 </header>
 
-<main class="menu-section">
-    <div class="menu-card" onclick="location.href='#appunti'">📚 Appunti</div>
-    <div class="menu-card" onclick="location.href='#playlist'">🎵 Playlist</div>
-    <div class="menu-card" onclick="location.href='#scommesse'">🎲 Zona Scommesse</div>
-    <div class="menu-card" onclick="location.href='chat.html'">💬 Chat tra Utenti</div>
-</main>
-
-
-<!-- Appunti -->
-<section id="appunti">
-    <h2>I miei appunti scolastici</h2>
-    <ul>
-        <li><button class="materia" data-materia="Informatica">Informatica</button></li>
-        <li><button class="materia" data-materia="Matematica">Matematica</button></li>
-        <li><button class="materia" data-materia="SistemiEReti">Sistemi e Reti</button></li>
-        <li><button class="materia" data-materia="TPS">TPS</button></li>
-        <li><button class="materia" data-materia="Telecomunicazioni">Telecomunicazioni</button></li>
-    </ul>
-
-    <div id="pdf-viewer" style="display:none;">
-        <h3 id="titolo-materia"></h3>
-        <ul id="pdf-list"></ul>
-    </div>
-</section>
-
-<!-- Playlist -->
-<section id="playlist">
-    <h2>🎵 Le mie playlist Spotify</h2>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>Reggaeton</h3>
-        <iframe src="https://open.spotify.com/embed/playlist/4obHtIC6XJIeybeumHYBDE" allowfullscreen></iframe>
-    </div>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>Estate Italiana</h3>
-        <iframe src="https://open.spotify.com/playlist/4AlwhvpTx7uy4SO0hBjNBz?si=03ccd02065014146" allowfullscreen></iframe>
-    </div>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>R&B Mix</h3>
-        <iframe src="https://open.spotify.com/playlist/0cbVg2OS7Vur4piDLstIU4?si=7cc6fcb7a3514c9b" allowfullscreen></iframe>
-    </div>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>Chill Tardi</h3>
-        <iframe src="https://open.spotify.com/playlist/4CTiwuvrQ18qB30iqxmBii?si=e329b068a4df47a9" allowfullscreen></iframe>
-    </div>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>Boxe</h3>
-        <iframe src="https://open.spotify.com/playlist/3BHP4p5ET08K5IfWuiuTGk?si=7bf74d4bec1a4d11" allowfullscreen></iframe>
-    </div>
-
-    <div class="playlist-card">
-        <div class="glow"></div>
-        <div class="play-icon">▶</div>
-        <h3>Muzica Romaneasca</h3>
-        <iframe src="https://open.spotify.com/playlist/7JjAewTiLR1VgRjt7ggkOF?si=47b359bec4cc448b" allowfullscreen></iframe>
-    </div>
-</section>
-
-<section id="player">
-    <h2>Ascolta direttamente qui</h2>
-    <iframe style="border-radius:12px"
-            src="https://open.spotify.com/"
-            width="100%" height="152" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-    </iframe>
-</section>
-
-
-<!-- Zona Scommesse-->
-<section id="scommesse">
-    <h2>Zona Scommesse</h2>
-    <div class="bet-logos">
-        <a href="https://www.eurobet.it/it/" target="_blank">
-            <img src="img/scommesse/Eurobet.png" alt="Eurobet" />
-        </a>
-        <a href="https://www.sisal.it" target="_blank">
-            <img src="img/scommesse/sisal.png" alt="Sisal" />
-        </a>
-        <a href="https://www.snai.it" target="_blank">
-            <img src="img/scommesse/snai.png" alt="Snai" />
-        </a>
-        <a href="https://www.goldbet.it" target="_blank">
-            <img src="img/scommesse/goldbet.png" alt="GoldBet" />
-        </a>
-    </div>
-</section>
-
-<!--Chat tra utenti-->
-<section id="chat-link">
-    <h2>💬 Chat tra utenti</h2>
-    <a href="/chat.html" class="chat-button">Entra nella chat tra utenti</a>
-</section>
-
-<!--DashBoard-->
-<section id="dashboard">
-    <h2>📊 Dashboard</h2>
-    <div class="stats">
-        <div class="stat-box">
-            <h3>📄 PDF disponibili</h3>
-            <p id="pdf-count">0</p>
-        </div>
-        <div class="stat-box">
-            <h3>💬 Utenti in chat</h3>
-            <p id="chat-users">0</p>
-        </div>
-        <div class="stat-box">
-            <h3>🎵 Playlist cliccate</h3>
-            <p id="playlist-clicks">0</p>
-        </div>
-    </div>
-</section>
-
-<!--Barra del tempo-->
-<div id="unlock-timer">
-    <p>⏳ Sblocco Sala Giochi tra <span id="time-left">5:00</span></p>
-    <div id="progress-bar">
-        <div id="progress-fill"></div>
-    </div>
+<div class="menu-section">
+    <div class="menu-card electric-border" onclick="location.hash='#appunti'">📚 Appunti</div>
+    <div class="menu-card electric-border" onclick="location.hash='#playlist'">🎵 Playlist</div>
+    <div class="menu-card electric-border" onclick="location.hash='#scommesse'">🎲 Zona Scommesse</div>
 </div>
 
+<!-- APPUNTI -->
+<section id="appunti">
+    <h2>I miei appunti scolastici</h2>
 
+    <div id="materie">
+        <button class="materia" data-materia="Informatica">Informatica</button>
+        <button class="materia" data-materia="Matematica">Matematica</button>
+        <button class="materia" data-materia="SistemiEReti">Sistemi e Reti</button>
+        <button class="materia" data-materia="Telecomunicazioni">Telecomunicazioni</button>
+        <button class="materia" data-materia="TPS">TPS</button>
+    </div>
 
-<!--Sezione Segreta-->
-<section id="segreto" style="display:none;">
-    <h2>🕹️ Sala Giochi Segreta</h2>
-    <p>Hai sbloccato l’area riservata! Ecco i giochi disponibili:</p>
+    <div id="pdf-viewer" style="display:none;">
+        <h3 id="titolo-materia">Appunti</h3>
+        <ul id="pdf-list"></ul>
+    </div>
 
-    <!-- Trivia Game -->
-    <div class="game-card">
-        <h3>🧠 Trivia Game</h3>
-        <div id="trivia-game">
-            <div id="quiz-container"></div>
-            <button onclick="submitQuiz()">Invia Risposte</button>
-            <div id="quiz-result"></div>
+    <div class="stats">
+        <div class="stat-box electric-border">
+            <h3>PDF Totali</h3>
+            <p id="pdf-count">0</p>
         </div>
     </div>
+</section>
 
-    <!-- Memory Game -->
-    <div class="game-card">
-        <h3>🎯 Memory Game</h3>
-        <iframe src="https://games.construct.net/memory" width="100%" height="400" frameborder="0"></iframe>
+<!-- PLAYLIST -->
+<section id="playlist">
+    <h2>Le mie playlist Spotify</h2>
+
+    <div class="playlist-grid">
+        <article class="playlist-card electric-border" data-playlist-id="4obHtIC6XJIeybeumHYBDE" tabindex="0" aria-label="Playlist Reggaeton">
+            <div class="playlist-card-inner">
+                <div class="playlist-meta">
+                    <h3>Reggaeton</h3>
+                    <p class="playlist-desc">Energia e ritmo</p>
+                </div>
+                <div class="playlist-frame-wrap" data-src="https://open.spotify.com/embed/playlist/4obHtIC6XJIeybeumHYBDE?si=4e9c0078ffb4482b" aria-hidden="true"></div>
+                <button class="playlist-open" type="button" aria-label="Apri Reggaeton">Apri</button>
+            </div>
+        </article>
+
+        <article class="playlist-card electric-border" data-playlist-id="4AlwhvpTx7uy4SO0hBjNBz" tabindex="0" aria-label="Playlist Estate Italiana">
+            <div class="playlist-card-inner">
+                <div class="playlist-meta">
+                    <h3>Estate Italiana</h3>
+                    <p class="playlist-desc">Hit estive italiane</p>
+                </div>
+                <div class="playlist-frame-wrap" data-src="https://open.spotify.com/embed/playlist/4AlwhvpTx7uy4SO0hBjNBz?si=bcff97dc6a8a470a" aria-hidden="true"></div>
+                <button class="playlist-open" type="button" aria-label="Apri Estate Italiana">Apri</button>
+            </div>
+        </article>
+
+        <article class="playlist-card electric-border" data-playlist-id="0cbVg2OS7Vur4piDLstIU4" tabindex="0" aria-label="Playlist R&B mix">
+            <div class="playlist-card-inner">
+                <div class="playlist-meta">
+                    <h3>R&amp;B mix</h3>
+                    <p class="playlist-desc">R&amp;B e soul selezionati</p>
+                </div>
+                <div class="playlist-frame-wrap" data-src="https://open.spotify.com/embed/playlist/0cbVg2OS7Vur4piDLstIU4?si=70dc76bb925c4d6a" aria-hidden="true"></div>
+                <button class="playlist-open" type="button" aria-label="Apri R&B mix">Apri</button>
+            </div>
+        </article>
+
+        <article class="playlist-card electric-border" data-playlist-id="4CTiwuvrQ18qB30iqxmBii" tabindex="0" aria-label="Playlist Chill tardi">
+            <div class="playlist-card-inner">
+                <div class="playlist-meta">
+                    <h3>Chill tardi</h3>
+                    <p class="playlist-desc">Relax notturno</p>
+                </div>
+                <div class="playlist-frame-wrap" data-src="https://open.spotify.com/embed/playlist/4CTiwuvrQ18qB30iqxmBii?si=666f8298937f4afe" aria-hidden="true"></div>
+                <button class="playlist-open" type="button" aria-label="Apri Chill tardi">Apri</button>
+            </div>
+        </article>
+
+        <article class="playlist-card electric-border" data-playlist-id="3BHP4p5ET08K5IfWuiuTGk" tabindex="0" aria-label="Playlist Boxe">
+            <div class="playlist-card-inner">
+                <div class="playlist-meta">
+                    <h3>Boxe</h3>
+                    <p class="playlist-desc">Allenamenti e adrenalina</p>
+                </div>
+                <div class="playlist-frame-wrap" data-src="https://open.spotify.com/embed/playlist/3BHP4p5ET08K5IfWuiuTGk?si=6acd963eb464497b" aria-hidden="true"></div>
+                <button class="playlist-open" type="button" aria-label="Apri Boxe">Apri</button>
+            </div>
+        </article>
     </div>
 
-    <!-- Space Shooter -->
-    <div class="game-card">
-        <h3>🚀 Space Shooter</h3>
-        <iframe src="https://games.construct.net/spaceshooter" width="100%" height="400" frameborder="0"></iframe>
+    <div class="stat-box playlist-stats electric-border" style="margin-top:18px;">
+        <h3>Playlist aperte</h3>
+        <p id="playlist-clicks">0</p>
     </div>
+</section>
 
-    <!-- Reaction Game -->
-    <div class="game-card">
-        <h3>⚡ Reaction Speed Test</h3>
-        <iframe src="https://games.construct.net/reaction" width="100%" height="400" frameborder="0"></iframe>
+<!-- SCOMMESSE -->
+<section id="scommesse">
+    <h2>Scommesse</h2>
+
+    <div class="bet-grid centered">
+        <article class="bet-card electric-border" id="bet-goldbet" aria-label="Goldbet">
+            <div class="bet-logo">
+                <a href="https://www.goldbet.it" target="_blank" rel="noopener" class="bet-logo-link" aria-label="Vai a Goldbet">
+                    <img src="/img/scommesse/goldbet.png" alt="Goldbet logo" loading="lazy">
+                </a>
+            </div>
+            <h3 class="bet-title">Goldbet</h3>
+            <p class="bet-desc">Quote competitive e promozioni.</p>
+        </article>
+
+        <article class="bet-card electric-border" id="bet-eurobet" aria-label="Eurobet">
+            <div class="bet-logo">
+                <a href="https://www.eurobet.it" target="_blank" rel="noopener" class="bet-logo-link" aria-label="Vai a Eurobet">
+                    <img src="/img/scommesse/Eurobet.png" alt="Eurobet logo" loading="lazy">
+                </a>
+            </div>
+            <h3 class="bet-title">Eurobet</h3>
+            <p class="bet-desc">Scommesse sportive e live betting.</p>
+        </article>
+
+        <article class="bet-card electric-border" id="bet-sisal" aria-label="Sisal">
+            <div class="bet-logo">
+                <a href="https://www.sisal.it" target="_blank" rel="noopener" class="bet-logo-link" aria-label="Vai a Sisal">
+                    <img src="/img/scommesse/sisal.png" alt="Sisal logo" loading="lazy">
+                </a>
+            </div>
+            <h3 class="bet-title">Sisal</h3>
+            <p class="bet-desc">Palinsesto completo e app mobile.</p>
+        </article>
+
+        <article class="bet-card electric-border" id="bet-snai" aria-label="Snai">
+            <div class="bet-logo">
+                <a href="https://www.snai.it" target="_blank" rel="noopener" class="bet-logo-link" aria-label="Vai a Snai">
+                    <img src="/img/scommesse/snai.png" alt="Snai logo" loading="lazy">
+                </a>
+            </div>
+            <h3 class="bet-title">Snai</h3>
+            <p class="bet-desc">Quote e palinsesto nazionale.</p>
+        </article>
+    </div>
+</section>
+<!-- Zona Segreta -->
+<section id="unlock-timer" aria-live="polite">
+    <h2>Zona Segreta</h2>
+
+    <div class="timer-card electric-border">
+        <div class="timer-body">
+            <p id="timer-desc" class="muted">Torna tra poco: il contenuto si sbloccherà automaticamente.</p>
+
+            <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div id="progress-fill" class="progress-fill" style="width:0%"></div>
+            </div>
+
+            <div class="timer-info">
+                <span id="time-left">5:00</span>
+                <button id="skip-wait" class="btn-secondary" type="button">Sblocca ora</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="segreto" style="display:none;">
+    <h2>Sala Giochi Segreta</h2>
+
+    <div id="secret-games" class="games-grid">
+        <!-- RPS -->
+        <div class="game-card electric-border" id="game-rps" role="region" aria-label="Sasso Carta Forbice">
+            <h3>Rock Paper Scissors</h3>
+            <p class="muted">Sfida la CPU in partite veloci.</p>
+            <div class="rps-board">
+                <div class="rps-controls">
+                    <button class="rps-btn" data-move="rock">✊</button>
+                    <button class="rps-btn" data-move="paper">✋</button>
+                    <button class="rps-btn" data-move="scissors">✌️</button>
+                </div>
+                <div class="rps-result" aria-live="polite">
+                    <div class="rps-status">Scegli una mossa</div>
+                    <div class="rps-score">Tu: <span id="rps-you">0</span> — CPU: <span id="rps-cpu">0</span></div>
+                </div>
+            </div>
+            <button class="game-reset btn-secondary" data-game="rps">Reset</button>
+        </div>
+
+        <!-- Tic Tac Toe -->
+        <div class="game-card electric-border" id="game-ttt" role="region" aria-label="Tic Tac Toe">
+            <h3>Tic Tac Toe</h3>
+            <p class="muted">Gioca in X contro CPU O.</p>
+            <div class="ttt-board" id="ttt-board" role="grid" aria-label="Tavola Tic Tac Toe">
+                <button class="ttt-cell" data-cell="0" aria-label="Cella 1"></button>
+                <button class="ttt-cell" data-cell="1" aria-label="Cella 2"></button>
+                <button class="ttt-cell" data-cell="2" aria-label="Cella 3"></button>
+                <button class="ttt-cell" data-cell="3" aria-label="Cella 4"></button>
+                <button class="ttt-cell" data-cell="4" aria-label="Cella 5"></button>
+                <button class="ttt-cell" data-cell="5" aria-label="Cella 6"></button>
+                <button class="ttt-cell" data-cell="6" aria-label="Cella 7"></button>
+                <button class="ttt-cell" data-cell="7" aria-label="Cella 8"></button>
+                <button class="ttt-cell" data-cell="8" aria-label="Cella 9"></button>
+            </div>
+            <div class="ttt-info">Turno: <span id="ttt-turn">X</span> · <span id="ttt-status">Inizia tu</span></div>
+            <button class="game-reset btn-secondary" data-game="ttt">Nuova Partita</button>
+        </div>
+
+        <!-- Memory -->
+        <div class="game-card electric-border" id="game-memory" role="region" aria-label="Memory Emoji">
+            <h3>Memory Emoji</h3>
+            <p class="muted">Trova le coppie: meno mosse possibile.</p>
+            <div class="memory-stats">Mosse: <span id="mem-moves">0</span> · Coppie: <span id="mem-pairs">0</span>/6</div>
+            <div class="memory-grid" id="memory-grid" aria-live="polite"></div>
+            <button class="game-reset btn-secondary" data-game="memory">Riavvia</button>
+        </div>
     </div>
 </section>
 
 
-<footer>
-    <p>Made by robb</p>
-</footer>
 
 <script src="script.js"></script>
 </body>
